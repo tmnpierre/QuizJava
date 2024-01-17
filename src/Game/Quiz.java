@@ -81,10 +81,13 @@ public class Quiz {
             System.out.print("Votre réponse (numéro) : ");
             int answer = scanner.nextInt();
             if (question.getOptions().get(answer - 1).equals(question.getCorrectAnswer())) {
+                System.out.println("Bonne réponse !");
                 score++;
+            } else {
+                System.out.println("Mauvaise réponse. La bonne réponse était : " + question.getCorrectAnswer());
             }
         }
         scanner.close();
-        System.out.println("Votre score est : " + score + "/" + questions.size());
+        System.out.println("Le quiz est terminé. Votre score est : " + score + "/" + questions.size());
     }
 }
